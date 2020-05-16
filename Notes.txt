@@ -1,0 +1,26 @@
+docker ps --all
+docker start container_id (exited or created olanı tekrar çalıştır)
+docker system prune (sil)
+docker logs container_id (consoleunu gösterir)
+docker stop container_id (close signal)
+docker kill container_id (kill signali sudden death)
+docker exec -it container_id <command>
+docker exec -it container_id sh
+docker run -it container_id sh (komutu calistir ve shellini al)
+
+docker file:
+# Use an existing docker image as a base
+FROM alpine
+
+# Download and install a dependency
+RUN apk add --update redis
+
+# Tell the image what to do when it starts as a container
+
+CMD ["redis-server"]
+
+
+docker build .
+
+docker build -t sachemrebel/redis:latest . (tag project name)
+docker commit -c 'CMD["redis-server"]' container_id (!!!!taking snapshot of running container)
