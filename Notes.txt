@@ -36,3 +36,8 @@ docker run -d container_name (execute in background)
 docker-compose up -d (up containers from yml in background)
 docker-compose down (stop containers from yml)
 docker-compose ps (list yml running containers)
+
+docker build -f Dockerfile.dev . (different file name)
+docker run -v $(pwd):/app container_id (app directory reference has been added as volume to container)
+
+ docker run -it  -p 3000:3000  -v /app/node_modules -v $(pwd):/app container_id (bind container's /app folder with local pwd, exclude node_modules)
