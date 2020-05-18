@@ -16,7 +16,7 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          UnLearn Vue please!!!
+          UnLearn Vue please!!
         </a>
       </header>
     </div>
