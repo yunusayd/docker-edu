@@ -5,7 +5,7 @@ docker logs container_id (consoleunu gösterir)
 docker stop container_id (close signal)
 docker kill container_id (kill signali sudden death)
 docker exec -it container_id <command>
-docker exec -it container_id sh
+docker exec -it container_id sh (çalışan bir containerin shellies)
 docker run -it container_id sh (komutu calistir ve shellini al)
 
 docker file:
@@ -24,3 +24,15 @@ docker build .
 
 docker build -t sachemrebel/redis:latest . (tag project name)
 docker commit -c 'CMD["redis-server"]' container_id (!!!!taking snapshot of running container)
+
+docker run -p 8080:8080 sachemrebel/simpleweb (localport:containerport)
+
+WORKDIR /usr/app (set app workdir in docker container)
+
+docker compose (multiple container communication)
+docker-compose up (up containers from yml)
+docker-compose up --build (rebuild then up containers from yml)
+docker run -d container_name (execute in background)
+docker-compose up -d (up containers from yml in background)
+docker-compose down (stop containers from yml)
+docker-compose ps (list yml running containers)

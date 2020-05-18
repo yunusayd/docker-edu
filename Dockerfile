@@ -1,11 +1,12 @@
 # base image
 FROM node:alpine
 
-COPY ./ ./
+WORKDIR '/app'
 
+COPY package.json .
 RUN npm install
 
-ENV key=value
+COPY . .
 
 
 CMD ["npm", "start"]
